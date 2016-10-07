@@ -1,0 +1,26 @@
+<!--
+    @Created on : 07-oct-2016, 22:55:17
+    @Author     : RVS
+    @Pag        : http://stackoverflow.com/questions/9329446/for-each-over-an-array-in-javascript
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+      var a = ["a", "b", "c"];
+      var it = a.values;
+      var entry;
+      while (!(entry = it.next()).done) {
+        console.log(entry.value);
+      }
+    </script>
+  </head>
+  <body>
+    <div>NFND</div>
+  </body>
+</html>
