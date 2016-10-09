@@ -195,7 +195,7 @@
                    nuevaVentana.document.close();
                    nuevaVentana.focus();
                  }
-                                                                                     </script>
+                                                                                                                               </script>
             <b>Click the following button to open a new window: </b>
             <button onclick="abrirVentana()">Boton</button>
               </code>
@@ -387,9 +387,9 @@ var x = window.length;
                 <script>
                   function disponible_cookie() {
                     if (navigator.cookieEnabled === true) {
-                    alert("Estan disponible las cookies");
-                    }else{
-                    alert("No estan disponible las cookies ");
+                      alert("Estan disponible las cookies");
+                    } else {
+                      alert("No estan disponible las cookies ");
                     }
                   }
                 </script>
@@ -640,8 +640,21 @@ function moveByWindow() {
               Los valores de los parámetros: Ninguno<br />
               Valores retorno : Ninguno
             </p>
-            <h3>resizeBy()</h3>
-            <p>
+            <pre>
+            <code>
+              <script>
+                function imprimirDocumento() {
+                  window.print();
+                }
+                ;
+                                                                           </script>
+            </code>
+            </pre>
+            <button onclick="imprimirDocumento()">Imprimir</button>
+          </section> <!-- nueva diapositiva -->
+          <section> <!-- nueva diapositiva -->
+            <h6>resizeBy()</h6>
+            <p style="font-size: medium">
               Redimensiona ventana navegador a un tamaño específico <br />
               indicando cantidad relativa respecto tamaño actual.<br />
               Sintaxis : <strong>window</strong>.<em>resizeBy</em><strong>(width,height)</strong><br />
@@ -651,11 +664,34 @@ function moveByWindow() {
               <strong>width</strong> - Número <strong>positivo / negativo</strong> especifica cantidad pixeles se redimensiona ancho pagina. <strong>(Requerido)</strong><br />
               <strong>height</strong> - Número <strong>positivo / negativo</strong> especifica cantidad pixeles se redimensiona alto página <strong>(Requerido)</strong><br />
             </p>
+            <pre>
+              <code>
+                 <script>
+                   var myWindow;
+
+                   function openWin() {
+                     myWindow = window.open("", "", "width=100, height=100");
+                   }
+
+                   function resizeWin() {
+                     myWindow.resizeBy(250, 250);
+                     myWindow.focus();
+                   }
+
+                   function cerrar() {
+                     myWindow.close();
+                   }
+</script>
+              </code>
+            </pre>
+            <button onclick="openWin()">Crear window</button>
+            <button onclick="resizeWin()">Redimensionar window</button>
+            <button onclick="cerrar()">Cerrar window</button>
           </section>
 
           <section>
-            <h3>resizeTo()</h3>
-            <p>Redimensiona tamaño navegador mediante ancho <strong>"x"</strong> , alto <strong>"y"</strong> específico. 
+            <h6>resizeTo()</h6>
+            <p style="font-size: medium">Redimensiona tamaño navegador mediante ancho <strong>"x"</strong> , alto <strong>"y"</strong> específico. 
               <br /><strong>No permiten valores negativos.</strong><br />
               Sintaxis: <strong>window</strong>.<em>resizeTo</em><strong>(width,height)</strong><br />
               Valores parámetros:<br />
@@ -663,6 +699,27 @@ function moveByWindow() {
               <strong>height:</strong> Número pixeles tiene alto ventana <strong>(Requerido)</strong><br />
               Valor Retorno : Ninguno.<br />
             </p>
+            <pre>
+              <code>
+                <script>
+                  var myWindow;
+                  function openWin() {
+                    myWindow = window.open("", "", "width=100, height=100");
+                  }
+                  function resizeWin() {
+                    myWindow.resizeTo(250, 250);
+                    myWindow.focus();
+                  }
+                  function cerrar() {
+                    myWindow.close();
+                  }
+
+              </script>
+              </code>
+            </pre>
+            <button onclick="openWin()">Crear window</button>
+            <button onclick="resizeWin()">Ajustar tamaño window</button>
+            <button onclick="cerrar()">Cerrar tamaño window</button>
           </section>
 
           <section>
@@ -675,6 +732,17 @@ function moveByWindow() {
               num_y : Numero pixeles se desplaza en eje y (Requerido)<br />
               Valor Retorno : Ninguno. <br />
             </p>
+            <pre>
+              <code>
+                <script>
+                  function scrollWin() {
+                    window.scrollBy(100, 0);
+                  }
+                </script>  
+              </code>
+            </pre>
+          </section>
+          <section>
             <h3>scrollTo()</h3>
             <p>
               Desplazamiento del documento especificado mediante coordenadas <strong>"x"</strong> horizontal , <strong>"y"</strong> vertical.<br />
@@ -684,6 +752,15 @@ function moveByWindow() {
               posición y : Coordenadas desplaza eje <strong>"y"</strong> . <strong>(Requerido)</strong><br />
               Valor Retorno : Ninguno.<br />
             </p>
+            <pre>
+              <code>
+                <script>
+                  function scrollWin() {
+                    window.scrollTo(500, 0);
+                  }
+                </script>
+                </code>
+            </pre>
           </section>
 
           <section>
@@ -694,6 +771,16 @@ function moveByWindow() {
               Valores parámetros : <em>Ninguno.</em><br />
               Valor de retorno : <em>Ninguno.</em><br />
             </p>
+            <pre>
+              <code>
+                <script>
+                  function parar() {
+                    window.stop();
+                  }
+              </script>
+              </code>
+            </pre>
+            <button onclick="parar()">Boton</button>
           </section>
           <section>
             <h4>SetInterval y setTimeout</h4>
@@ -801,7 +888,7 @@ function moveByWindow() {
     <script src="js/reveal.js"></script>
     <script src="js/metodos.js"></script>
     <script>
-              
+
               // More info https://github.com/hakimel/reveal.js#configuration
               Reveal.initialize({
                 controls: true,
@@ -809,7 +896,7 @@ function moveByWindow() {
                 history: true,
                 center: true,
                 transition: 'slide', // none/fade/slide/convex/concave/zoom
-                
+
                 // More info https://github.com/hakimel/reveal.js#dependencies
                 dependencies: [
                   {src: 'lib/js/classList.js', condition: function () {
@@ -828,7 +915,7 @@ function moveByWindow() {
                   {src: 'plugin/notes/notes.js', async: true}
                 ]
               });
-              
+
     </script>
 
   </body>
