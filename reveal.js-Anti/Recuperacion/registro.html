@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+		<meta name="author" content="Antonio Ib&aacute;&ntilde;ez"/>
+		<meta name="generator" content="Notepad++" />
+		<meta name="date" content="May 2016"/>
+		<meta name="description" content="Index" />
+		<meta name="keywords" content="apuntes, almer&iacute;a, lenguaje de marcas" />
+		<meta charset="UTF-8"/>
+		<title>Registro</title>
+		<link  rel="stylesheet" href="css/celiavinas.css" title="style" />
+		<link  rel="stylesheet" href="css/calendar-win2k-1.css" title="style" />
+		<link  rel="stylesheet" href="css/registro.css" title="style" />
+		<script src="js/calendar.js"></script>
+		<script src="js/calendar-es.js"></script>
+		<script src="js/calendar-setup.js"></script>
+		<script src="js/registro.js"></script>
+		<body>
+		<header id="head">
+			<a href="index.html" rel="home">
+				<div id="imagen">
+					<img src="img/escudo.png" id="escudo" alt="IES Celia Vinas" title="IES Celia Vinas" height="100">
+					<p id="titulo">
+					IES CELIA VI&Ntilde;AS<br/>
+					Scientia Omnibus Portus
+					</p>
+				</div>
+			</a>
+			<div id="info">
+				<ul id="contact">
+					<li>Instituto de Ense&ntilde;anza Secundaria Celia Vi&ntilde;as</li>
+					<li>C/ Javier Sanz 15 - 04004 Almer&iacute;a (Espa&ntilde;a)</li>
+					<li>Tlf: (+34) 950 15 61 51</li>
+					<li>Fax: (+34) 950 15 61 57</li>
+				</ul>
+			</div>
+		</header>
+		<nav>
+			<ul id="menu_principal">
+				<li id="borde_izquierdo"><a href="index.html">Inicio</a></li>
+				<li><a href="registro.html">Registro</a></li>
+				<li><a href="login.html">Examen</a></li>
+				<li><a href="nosotros.html">Sobre nosotros</a></li>
+			</ul>
+		</nav>
+		<section id="caja_inferior">
+			<hr id="barrabaja">
+			<div id="formulario">
+			
+						<form id="form_registro" action="mailto:antoiba86@gmail.com" method="post" onreset="toReset()" >
+							<h1 id="registro">REGISTRO</h1>
+							<hr/>
+							<label>Nombre y apellidos:</label> <br/><input type="text" name="nombre_usuario" id="name_form" size="45" maxlength="30"/><br/>
+							<label>Direcci&oacute;n:</label> <br/><input type="text" name="direccion" id="direccion" size="45"maxlength="50"/><br/>
+							<label>DNI:</label> <br/><input type="text" name="dni" id="dni" size="45" maxlength="9"/><br/>
+							<label>Tel&eacute;fono:</label> <br/><input type="tel" name="telefono" id="telefono" size="45"   maxlength="9"/><br/>
+							1&deg; ASIR<input type="radio" name="curso" value="asir" />&nbsp; 
+							1&deg; DAW<input type="radio" name="curso" value="daw" /> <br/>
+							<label for="centro">Centro</label>
+							<select id="centro" name="centro">
+							  <option value="" selected="selected">- selecciona -</option>
+							  <option value="Celia Vinas">IES Celia Vi&ntilde;as</option>
+							  <option value="Azcona">IES Azcona</option>
+							  <option value="Albaida">IES Albaida</option>
+							  <option value="Al-Andalus">IES Al-Andalus</option>
+							  <option value="otro">Otro</option>
+							</select><br/>
+							<label>Fecha nacimiento: </label><input type="text" name="data" id="fecha" readonly="readonly"/><button id="trigger"><img src="img/img.gif" id="Calendario" alt="Calendario" title="calendar"><script type="text/javascript">
+							Calendar.setup(
+							{
+							inputField : "fecha", // ID of the input field
+							ifFormat : "%d/%m/%Y", // the date format
+							button : "trigger" // ID of the button
+							}
+							);
+							</script></button><br/>
+							<input type="checkbox" value="marcas" name="marcas" id="marcas"/><label>Lenguaje de marcas</label> <br/>
+							<input type="checkbox" value="sistemas" name="sistemas" id="sistemas"/><label>Sistemas de Informaci&oacute;n</label> <br/>
+							<input type="checkbox" value="programacion" name="programacion" id="programacion"/><label>Programaci&oacute;n</label> <br/>
+							<input type="checkbox" value="bases" name="bases" id="bases"/><label>Bases de datos</label> <br/>
+							<input type="checkbox" value="entornos" name="entornos" id="entornos"/><label>Entornos de desarrollo</label> <br/>
+							<input type="checkbox" value="fol" name="fol" id="fol"/><label>FOL</label> <br/>
+							<input type="checkbox" value="fundamentos" name="fundamentos" id="fundamentos"/><label>Fundamentos de Hardware</label> <br/>
+							<input type="checkbox" value="implantacion" name="implantacion" id="implantacion"/><label>Implantaci&oacute;n de sistemas operativos</label> <br/>
+							<div id="enviar"><input type="button" name="boton" id="boton_enviar" onclick="comprobar();" value="Enviar"/> <input type="reset"/></div>
+						</form>
+			</div>
+			<div id="celia">
+				<img src="img/celiavinas.jpg" id="foto_celia" alt="Celia Vinas" title="Celia Vinas">
+			</div>
+		</section>
+		<footer>
+			<div id="texto_pie">
+				<p> Antonio Ib&aacute;&ntilde;ez. Copyrigth&copy; 2016, All Rigths Reserved </p>
+				<p><a href="nosotros.html">Contacta</a></p>
+				<p>Pol&iacute;tica de Cookies</p>
+			</div>
+			<div id="redes">
+				<img src="img/twitter.png" id="twitter" alt="Twitter" title="Twitter">
+				<img src="img/facebook.png" id="facebook" alt="Facebook" title="facebook">
+				<img src="img/linkedin.png" id="linkedin" alt="Linkedin" title="linkedin">
+			</div>
+		</footer>
+		</body>
+</html>

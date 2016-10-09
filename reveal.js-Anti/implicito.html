@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+    window.document.bgColor = "yellow";
+}
+function myFunction2() {
+   document.bgColor = "white";
+}
+
+var mql = window.matchMedia("screen and (max-width: 800px)")
+if (mql.matches){ // if media query matches
+ alert("La ventana es de 800 px o menos");
+}
+</script>
+</head>
+<body>
+
+<button onclick="myFunction()">Put Yellow</button>
+<button onclick="myFunction2()">Uhmm no, I prefer White</button>
+<a href="window.html#/4">Ejemplo</a>
+</body>
+</html>

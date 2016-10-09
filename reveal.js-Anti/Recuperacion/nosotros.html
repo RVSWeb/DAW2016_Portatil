@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html  ng-app="MyApp">
+		<meta name="author" content="Antonio Ib&aacute;&ntilde;ez"/>
+		<meta name="generator" content="Notepad++" />
+		<meta name="date" content="May 2016"/>
+		<meta name="description" content="Index" />
+		<meta name="keywords" content="apuntes, almer&iacute;a, lenguaje de marcas" />
+		<meta charset="UTF-8"/>
+		<title>Game</title>
+		<link  rel="stylesheet" href="css/celiavinas.css" title="style" />
+		<link  rel="stylesheet" href="css/nosotros.css" title="style" />
+		<script src="js/game.js"></script>
+		<body>
+			<header id="head">
+				<a href="index.html" rel="home">
+					<div id="imagen">
+						<img src="img/escudo.png" id="escudo" alt="IES Celia Vi&ntilde;as" title="IES Celia Vi&ntilde;as" height="100">
+						<p id="titulo">
+						IES CELIA VI&Ntilde;AS<br/>
+						Scientia Omnibus Portus
+						</p>
+					</div>
+				</a>
+				<div id="info">
+					<ul id="contact">
+						<li>Instituto de Ense&ntilde;anza Secundaria Celia Vi&ntilde;as</li>
+						<li>C/ Javier Sanz 15 - 04004 Almer&iacute;a (Espa&ntilde;a)</li>
+						<li>Tlf: (+34) 950 15 61 51</li>
+						<li>Fax: (+34) 950 15 61 57</li>
+					</ul>
+				</div>
+			</header>
+			<nav>
+				<ul id="menu_principal">
+					<li id="borde_izquierdo"><a href="index.html">Inicio</a></li>
+					<li><a href="registro.html">Registro</a></li>
+					<li><a href="login.html">Examen</a></li>
+					<li><a href="nosotros.html">Sobre nosotros</a></li>
+				</ul>
+			</nav>
+			<section id="caja_superior">
+				<hr class="barrabaja">
+				<div id="bloque">
+					<div id="google">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.191212193813!2d-2.463522684709035!3d36.83789637994088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd707601c24765c3%3A0xe791fe44a9d51b98!2sInstituto+de+Educaci%C3%B3n+Secundaria+Ies+Celia+Vi%C3%B1as!5e0!3m2!1ses!2ses!4v1461668244317" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+					
+					<div class="celia">
+						<p>Conoce el IES Celia Vi&ntilde;as de Almer&iacute;a, el Instituto de la capital que lleva m&aacute;s de 150 a&ntilde;os formando a generaciones de almerienses.
+
+						Nuestro instituto, el m&aacute;s antiguo de la capital, cuenta con una plantilla de profesores muy estable y estructurada en los correspondientes Departamentos, que son los responsables de la programaci&oacute;n y el seguimiento cotidiano de la pr&aacute;ctica docente. Su labor se completa con otros dos departamentos generales: el Departamento de Orientaci&oacute;n, dirigido por una psicopedagoga, y el Departamento de Actividades Extraescolares, cuyo objetivo es propiciar la realizaci&oacute;n de actividades educativas y recreativas que refuercen las desarrolladas en las aulas.</p>
+						<div id="img_about">
+							<img src="img/sobre_nosotros.jpg" id="about_us" alt="Celia Vinas" title="about_us">
+						</div>
+					</div>
+				</div>
+				<div id="sobre_nos">
+					<h3>KEVIN MITNICK</h3>
+					<hr class="barrabaja">
+					<div class="celia" id="kevin">
+						<p>Kevin David Mitnick (nacido el 6 de agosto de 1963) es uno de los hackers, crackers y phreakers estadounidense m&aacute;s famosos de la historia. Su nick o apodo fue C&oacute;ndor. Tambi&eacute;n apodado por &eacute;l mismo "fantasma de los cables".
+
+						Se dedica a la consultor&iacute;a desde la &oacute;ptica particular de la ingenier&iacute;a social; considera que m&aacute;s all&aacute; de las t&eacute;cnicas de hardware y software que se pueden implementar en las redes, el factor determinante de la seguridad de las mismas es la capacidad de los usuarios de interpretar correctamente las pol&iacute;ticas de seguridad y hacerlas cumplir.
+
+						Considera que todos podemos fallar f&aacute;cilmente en este aspecto ya que los ataques de ingenier&iacute;a social, muchas veces llevados a cabo solo con ayuda de un tel&eacute;fono, est&aacute;n basados en cuatro principios b&aacute;sicos y comunes a todas las personas.</p>
+					</div>
+					<div><img src="img/mitnick.jpg" id="mitnick" alt="mitnick" title="mitnick"></div>
+					<hr class="barrabaja">
+				</div>
+			
+			</section>
+			<section id="angular">
+				<label for="checkbox">
+					<input id="checkbox" type="checkbox" ng-model="visible">Púlsame
+				</label>
+				<div show="visible">
+					<p>Hello World</p>
+				</div>
+				<p>Enter your name:</p> <input type="text" ng-model="name"></input>
+				<p>Hello {{name}}!</p>
+			</section>
+			<iframe width="800" height="700" src="game.html" scrolling="no" frameborder="no" ></iframe>
+			<footer>
+				<div id="texto_pie">
+					<p> Antonio Ib&aacute;&ntilde;ez. Copyrigth&copy; 2016, All Rigths Reserved </p>
+					<p><a href="nosotros.html">Contacta</a></p>
+					<p>Pol&iacute;tica de Cookies</p>
+				</div>
+				<div id="redes">
+					<img src="img/twitter.png" id="twitter" alt="Twitter" title="Twitter">
+					<img src="img/facebook.png" id="facebook" alt="Facebook" title="facebook">
+					<img src="img/linkedin.png" id="linkedin" alt="Linkedin" title="linkedin">
+				</div>
+			</footer>
+			<script src="js/angular.js"></script>
+			<script src="js/pruebaAngular.js"></script>
+		</body>
+</html>
