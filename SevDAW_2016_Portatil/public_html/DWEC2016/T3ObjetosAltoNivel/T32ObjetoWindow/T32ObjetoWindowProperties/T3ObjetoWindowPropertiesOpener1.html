@@ -1,0 +1,42 @@
+<!--
+    @Created on : 09-oct-2016, 12:20:32
+    @Author     : RVS
+    @Pag        : http://www.w3resource.com/javascript/client-object-property-method/window-closed.php
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Js Window Object : Closed Property. Example 1 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+
+    <script>
+      var anotherwindow = window.open("whatever.html");
+      anotherwindow.bgColor = "black";
+
+      function remote2(url) {
+        window.opener.location = url;
+      }
+    </script>
+
+  </head> 
+  <body bgcolor="#FFFFFF">
+  <center>
+    <form>
+      <input type="button" onClick="window.opener.document.bgColor = 'yellow'" value="yellow">
+      <input type="button" onClick="window.opener.document.bgColor = 'lightgreen'" value="lightgreen">
+      <input type="button" onClick="window.opener.document.bgColor = 'white'" value="white">
+    </form>
+  </center>
+  <div align="center" style="background-color: lightblue;"><h3>Remote Control</h3></div>
+  <ul>
+    <li><a href="javascript:remote2('http://www.javascriptkit.com/javatutors/')">JavaScript Tutorials</a></li>
+    <li><a href="javascript:remote2('http://www.javascriptkit.com/jsref/')">JavaScript Reference</a></li>
+    <li><a href="javascript:remote2('http://www.javascriptkit.com/cutpastejava.shtml/')">Free JavaScripts</a></li>
+    <li><a href="javascript:remote2('http://www.javascriptkit.com/dhtmltutors/')">DHTML tutorials</a></li>
+    <li><a href="javascript:remote2('http://www.codingforums.com')">Coding Forums</a></li>
+  </ul>
+</body>
+</html>
