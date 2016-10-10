@@ -1,0 +1,41 @@
+#trigger {
+	margin-top: -20px;
+}
+
+#registro {
+	margin-left:100px;
+}
+#formulario hr {
+	background-color: #31a3dd;
+	height: 5px;
+	border: none;
+	margin-bottom: 5px;
+}
+
+#foto_celia {
+	width: 40%;
+	height: auto;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+
+form {
+	line-height: 27px;
+	width: 350px;
+	margin-left: 100px;
+	color: #696969;
+	margin-bottom: 20px;
+}
+
+#enviar {
+	margin-top: 10px;
+	
+}
+#enviar input {
+	background-color:#31a3dd;
+}
+
+#formulario{
+	float:left;
+	
+}

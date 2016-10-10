@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>titulo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+      function lanzar() {
+        // Check browser support
+        if (typeof (Storage) !== "undefined") {
+          // Store
+          localStorage.setItem("nombre", "Raul");
+          // Retrieve
+          document.getElementById("result").innerHTML = localStorage.getItem("nombre");
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div style="background-color: #66ff66 ; font-size: 40px" id="result"></div>
+    <br />
+    <button onclick="lanzar()">Boton</button>
+  </body>
+</html>
+

@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Objeto Window</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Objeto Window</h1>
+          <h3>Presentación de JavaScript</h3>
+          <p>
+            <small>Creado por <a href="https://es.linkedin.com/in/antonio-jesús-ibáñez-garcía-47107871">Antonio Ibáñez</a> / <a href="http://twitter.com/antoiba86">@antoiba86</a> y <a href="">Raúl</a></small>
+          </p>
+        </section>
+        <section>
+          <h2>ÍNDICE</h2>
+          <p>1. INTRODUCCIÓN</p>
+          <p>2. PROPIEDADES</p>
+          <p>3. MÉTODOS</p>
+          <p>4. BIBLIOGRAFÍA</p>
+        </section>
+        <section>
+
+          <h2>Objeto Window</h2>
+          <p>
+            Un Objeto para gobernarlos a todos. Un Objeto para encontrarlos, un Objeto para atraerlos a todos y atarlos en el código.
+          </p>
+          <img src="img/jerarquia.png" height="420" alt="jerarquia" />
+        </section>
+
+        <section>
+          <section>
+            <h2>Introducción</h2>
+            <p>
+              Cada variable, objeto y función creada en Javascript es parte de un Objeto Global, en el caso de los navegadores es el objeto Window.
+            </p>
+            <p>
+              El objeto window representa la ventana o pestaña que contiene el DOM, que es la estructura de nodos que tiene la página web.
+            </p>
+          </section>
+          <section>
+            <p>
+              Las versiones 3.0 de los navegadores Internet Explorer y Netscape Navigator introdujeron el concepto de Browser Object Model o BOM, que permite acceder y modificar las propiedades de las ventanas del propio navegador.
+            </p>
+            <p class="fragment yellow">
+              Pero algunas de estas opciones están desactivadas en los navegadores por motivos de seguridad...
+            </p>
+          </section>
+          <section>
+            <p>
+              El mayor inconveniente de BOM es que, al contrario de lo que sucede con DOM, ninguna entidad se encarga de estandarizarlo o definir unos mínimos de interoperabilidad entre navegadores.
+            </p>
+            <p class="fragment">
+              Algunos de los elementos que forman el BOM son los siguientes:
+            <ul>
+              <li class="fragment">Crear, mover, redimensionar y cerrar ventanas de navegador. </li>
+              <li class="fragment">Obtener información sobre el propio navegador. </li>
+              <li class="fragment">Propiedades de la página actual y de la pantalla del usuario. </li>
+              <li class="fragment">Gestión de cookies. </li>
+              <li class="fragment">Objetos ActiveX en Internet Explorer. </li>
+            </ul>
+          </section>
+          <section>
+            <p>
+              Además en un navegador con pestañas, como Firefox, cada pestaña contiene su propio Objeto Window.
+            </p>
+            <img data-src="img/tabs.png" alt="tabs" />
+          </section>
+
+        </section>
+        <section>
+          <h2>
+            OBJETO WINDOW
+          </h2>
+          <p>
+            El objeto Window se considera el objeto más importante del lenguaje JavaScript porque a partir de él, se pueden gestionar las ventanas del navegador utilizando una serie de propiedades y métodos.
+          </p>
+          <h3 class="fragment">Características</h3>
+          <ul>
+            <li class="fragment">Se considera como un objeto implícito.</li>
+            <li class="fragment">Soportado por todos los navegadores</li>
+          </ul>
+          <pre class="fragment">
+          <code class="hljs" data-trim contenteditable>
+                  function myFunction() {
+                      window.document.bgColor = "yellow";
+                  }
+                  function myFunction2() {
+                     document.bgColor = "white";
+                  }
+          </code>
+          </pre>
+          <a href="implicito.html" class="fragment">Ejemplo</a>
+          <!--<li class="fragment">Todas las propiedades y métodos se encuentran del objeto Window</li>
+          <li class="fragment">Las variables globales son las “propiedades” del Objeto window</li>
+          <li class="fragment">Los métodos globales son las “funciones” del Objeto window</li>-->
+        </section>
+        <section>
+          <section>
+            <h2>PROPIEDADES</h2>
+            <p>Definen las <strong>características y estados </strong> de un objeto.</p>
+            <p>Existen propiedades que ya <strong>no se utilizan</strong> o que su uso <strong>está bloqueado</strong> como hemos visto.</p>
+          </section>
+          <section>  
+            <h3>closed</h3>
+            <p>Devuelve valor <strong>&quot;booleano&quot;</strong> indicando cuando una ventana ha sido cerrada o no</p>
+            <pre>
+          <code class="hljs" data-trim contenteditable>
+            <script>
+              var miVentana;
+              function abrirVentana() {
+                miVentana = window.open("", "", "width=200,height=100");
+                miVentana.document.write("<p>La ventana esta abierta</p>");
+              }
+              function cerrarVentana() {
+                miVentana.close();
+              }
+              function testWindow() {
+                if (self.closed) {
+                  miVentana.document.write("<br />: ♦ Objeto <em>window</em> esta Cerrada");
+                } else {
+                  miVentana.document.write("<br />: ♣ Objeto <em>window</em> esta Abierto");
+                }
+              }
+                                                                                                                                                                                                        </script>
+          </code>
+            </pre>
+            <button onclick="abrirVentana()">Abrir</button>
+            <button onclick="cerrarVentana()">Cerrar</button>
+            <button onclick="testWindow()">Comprobar Ventana</button>
+          </section>
+          <section>
+            <h6>opener</h6>
+            <p>Si desde una ventana se ha abierto otra,<strong>opener</strong>
+              devuelve 1 referencia la ventana"<strong>generadora</strong>" o ventana desde la que se invocó la ventana actual. 
+              <br />Si es la ventana inicial de navegación, <strong>opener</strong> devuelve <em><strong>null</strong></em>.</p>
+            <pre>
+          <code>
+               <script>
+                 function abrirVentana() {
+                   var miBarra = 'directories=no,location=no,menubar=no,status=no';
+                   miBarra += ',titlebar=no,toolbar=no';
+                   var miOpciones = 'scrollbars=no,width=300,height=200,resizeable=no';
+                   var miscaracteristicas = miBarra + ',' + miOpciones;
+                   var mensaje_caja = 'This is a test.';
+                   var nuevaVentana = open('', 'myDoc', miscaracteristicas);
+                   nuevaVentana.document.writeln('<form>');
+                   nuevaVentana.document.writeln('<table>');
+                   nuevaVentana.document.writeln('<tr valign=top><td>');
+                   nuevaVentana.document.writeln('<textarea cols=45 rows=7 wrap=soft>');
+                   nuevaVentana.document.writeln(mensaje_caja + '</textarea>');
+                   nuevaVentana.document.writeln('</td></tr>');
+                   nuevaVentana.document.writeln('<tr><td>');
+                   nuevaVentana.document.writeln('<input type=button value="close"');
+                   var miMetodoJS = "window.opener.close();window.opener=null";
+                   nuevaVentana.document.writeln('onclick="' + miMetodoJS + '">');
+                   nuevaVentana.document.writeln('</td></tr>');
+                   nuevaVentana.document.writeln('</table></form>');
+                   nuevaVentana.document.close();
+                   nuevaVentana.focus();
+                 }
+                                                                                      </script>
+            <b>Click the following button to open a new window: </b>
+            <button onclick="abrirVentana()">Boton</button>
+              </code>
+            </pre>
+          </section> 
+          <section>
+            <h3>document</h3>
+            <p>Regresa el objeto &quot;document&quot; para la ventana</p>
+            <p>Cuando un documento HTML es cargado en un navegador, este se convierte en un objeto document. El objeto document es el nodo raíz del documento HTML y del que derivan los demás.</p>
+            <p>El objeto document es parte del objeto Window y se puede acceder a él mediante window.document.</p>
+            <pre>
+            <code>
+            <script>
+              function parametros() {
+                var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                alert("Browser inner window width: " + w + ", height: " + h + ".");
+              }
+                                                                                                                                                                                                        </script>
+            </code>
+            </pre>
+            <button onclick="parametros()">Boton</button>
+          </section>
+          <section>
+            <h4>frameElement</h4>
+            <p>Devuelve el elemento &lt;iframe&gt; de la ventana actual, si no es un iframe devuelve null</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    var frame = window.frameElement;
+    if (frame) frame.src = "http://www.w3schools.com/";
+}
+					</code></pre>
+            <h4>frames</h4>
+            <p>Es el conjunto de marcos de la ventana, la sintaxis es parecida a un array.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    window.frames[0].location = "http://www.w3schools.com/jsref";
+}
+					</code></pre>
+            <h4>length</h4>
+            <p>Devuelve el numero de elementos <strong>&lt;iframe&gt;</strong> de la ventana actual</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var x = window.length;
+					</code></pre>
+          </section>
+
+          <section> <!-- Comienzo -->
+            <h5>innerHeight</h5>
+            <p>Altura utilizable de la ventana.</p>
+            <pre>
+            <code>
+            <script>
+              function parametros() {
+                var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                alert("Browser inner window height: " + h);
+              }
+                                                                                                                                                                                                        </script>
+            </code>
+            </pre>
+            <h5>innerWidth</h5>
+            <p>Ancho utilizable de la ventana</p>
+            <pre>
+            <code>
+            <script>
+              function parametros() {
+                var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                alert("Browser inner window width: " + w);
+              }
+                                                                                                                                                                                                        </script>
+            </code>
+            </pre>
+          </section> <!-- Fin -->
+
+          <section>
+            <h3>outerHeight</h3>
+            <p>Regresa el alto de todos los navegadores , incluyendo la barra de notificaciones
+              &#40;Si se encuentra&#41; y los bordes </p>
+            <h3>outerWidth</h3>
+            <p>Obtiene alto en pixeles de la ventana del navegador por completo <br />
+              y representa el alto de todo el navegador , incluyendo la barra de <strong>notificaciones</strong>
+              si se encuentra y los <strong>bordes</strong></p>
+            <pre>
+              <code>
+                 <script>
+                   function metodo() {
+                     var w = window.outerWidth;
+                     var h = window.outerHeight;
+                     var x = "width : " + w + " height : " + h;
+                     alert(x);
+                   }
+</script>
+              </code>
+            </pre>
+            <button onclick="metodo()">Lanzar</button>
+          </section>
+
+          <section> <!-- Comienzo -->
+            <h6>localStorage y sessionStorage</h6>
+            <p style="font-size: smaller">Regresa una referencia al objeto<strong> localStorage</strong> usado en <br />
+              el almacenamiento de datos, este objeto similar a <strong>sessionStorage</strong>,
+              la diferencia es que mientras los datos almacenados en <strong>localStorage</strong>
+              no tiene fecha de expiraci&oacute;n. <br />Los datos almacenados en <strong>sessionStorage</strong>
+              son eliminados cuando la sesi&oacute;n de navegacion finaliza &quot;cuando
+              el usuario <strong>cierra</strong> la <strong>ventana</strong> del <strong>navegador</strong>.
+            </p>
+            <pre>
+              <code>
+                <script>
+                  function lanzar() {
+                    if (typeof (Storage) !== "undefined") {
+                      localStorage.setItem("nombre", "Raul");
+                      document.getElementById("result").innerHTML = localStorage.getItem("nombre");
+                    } else {
+                      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    }
+                  }
+                </script>
+              </code>
+            </pre>
+            <div style="background-color:tomato ; font-size: 40px" id="result"></div>
+            <br />
+            <button onclick="lanzar()">Boton</button>
+          </section> <!-- Fin -->
+
+          <section> <!-- Comienzo -->
+            <h3>history</h3>
+            <p>Conjunto de elementos que representan las <strong>URL</strong> visitadas</p>
+            <pre>
+              <code>
+                 <script>
+                   function hacia_atras() {
+                     history.back();
+                   }
+</script>
+              </code>
+            </pre>  
+            <button onclick="hacia_atras();">Ir Hacia Atras En el Historial navegacion</button>
+          </section> <!-- Fin -->
+
+          <section>
+            <h6>defaultStatus</h6>
+            <p style="font-size: medium">Ajusta o regresa el texto por defecto dentro barra de estado de una ventana <strong>( Deprecated )</strong></p>
+            <h6>location</h6>
+            <p style="font-size: medium">Devuelve un objeto de tipo <strong>Location</strong> con información relacionada con la <strong>URL</strong> del documento actual.</p>
+            <pre>
+              <code>
+                <script>
+                  function ver_informacion_web() {
+                    var y = location.hash;
+                    var x = location.host;
+                    var y1 = location.hostname;
+                    var y2 = location.pathname;
+                    var y3 = location.port;
+                    var y4 = location.protocol;
+                    alert('hast: ' + y + '\n\host' + x + '\n\hostname: ' + y1 + '\n\pathname: ' + y2 + '\n\port: ' + y3 + '\n\protocol: ' + y4);
+                  }
+                </script>
+            </code>
+            </pre>
+            <button onclick="ver()">Boton</button>
+          </section>
+          <section>
+            <h3>name</h3>
+            <p>Fija o regresa el nombre de la ventana.</p>
+            <pre>
+              <code>
+                <script>
+                  var myWindow;
+                  function ver_nombre_ventana() {
+                    myWindow = window.open("", "MsgWindow", "width=200,height=100");
+                    myWindow.document.write("<p>This window's name is: " + myWindow.name + "</p>");
+                  }
+                  function cerrar() {
+                    myWindow.close();
+                  }
+                </script>
+              </code>
+            </pre>
+            <button onclick="ver_nombre_ventana()">Boton</button>
+            <button onclick="cerrar()">cerrar</button>
+          </section>
+          <section> <!-- Comienzo -->
+            <h3>navigator</h3>
+            <p>Regresa una referencia al objeto <strong>navigator</strong> el cual
+              puede ser utilizado para obtener informaci&oacute;n sobre la aplicación 
+              que est&aacute; ejecutando el <strong>script</strong></p>
+            <pre>
+              <code>
+                <script>
+                  function disponible_cookie() {
+                    if (navigator.cookieEnabled === true) {
+                      alert("Estan disponible las cookies");
+                    } else {
+                      alert("No estan disponible las cookies ");
+                    }
+                  }
+                </script>
+            </code>
+            </pre>
+            <button onclick="disponible_cookie()">Boton</button>
+          </section> <!-- Fin -->
+          <section>
+            <h3>PageXOffset y scrollX</h3>
+            <p>Devuelve los píxeles del documento que han sido desplazados con el ratón de manera horizontal desde la esquina superior izquierda de la ventana.</p>
+            <h3>PageYOffset y scrollY</h3>
+            <p>Devuelve los píxeles del documento que han sido desplazados con el ratón de manera vertical desde la esquina superior izquierda de la ventana.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    window.scrollBy(100, 100);
+    alert("pageXOffset: " + window.pageXOffset + ", pageYOffset: " + window.pageYOffset);
+}
+					</code></pre>
+            <a href="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_pagexoffset">Ejemplo</a>
+          </section>
+          <section>
+            <h3>Parent</h3>
+            <p>Devuelve la ventana padre de la ventana actual.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    parent.document.body.style.backgroundColor = "red";
+}
+					</code></pre>
+            <h3>Self</h3>
+            <p>Devuelve la ventana actual.</p>
+            <h3>top</h3>
+            <p>Devuelve el valor de la ventana de más alto nivel. Es de solo lectura</p>
+            <pre><code class="hljs" data-trim contenteditable>
+if (window.top != window.self)
+        document.getElementById("demo").innerHTML = "¿Estoy en un iframe?";
+					</code></pre>
+            <a href="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_self_top">Ejemplo</a>
+          </section>
+          <section id="fragment">
+            <h3>Screen</h3>
+            <p>Devuelve el objeto Screen para la pantalla que contiene información sobre la ventana del usuario.</p>
+            <ul>
+              <li class="fragment"><span class="yellow">availHeight:</span>  	Devuelve la altura de la pantalla sin incluir la barra del navegador</li>
+              <li class="fragment"><span class="yellow">availWidth:</span>  	Devuelve la anchura de la pantalla sin incluir la barra del navegador</li>
+              <li class="fragment"><span class="yellow">colorDepth:</span> 	Devuelve la profundidad de color de la pantalla para enseñar imágenes</li>
+              <li class="fragment"><span class="yellow">height:</span>  	    Devuelva la altura total de la pantalla</li>
+              <li class="fragment"><span class="yellow">pixelDepth:</span>  	Devuelve la resolución de la pantalla en pixel por bits</li>
+              <li class="fragment"><span class="yellow">width:</span>  	Devuelva la anchura total de la pantalla</li>
+            </ul>
+            <a href="http://iesceliaciclos.org/antonioibanez/processwire/">Ejemplo</a>
+          </section>
+          <section>
+            <h3>ScreenLeft y ScreenX</h3>
+            <p>Devuelve la coordenada horizontal de la ventana de manera relativa a la pantalla.</p>
+            <h3>ScreenTop y ScreenY</h3>
+            <p>Devuelve la coordenada vertical de la ventana de manera relativa a la pantalla.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    var myWindow = window.open("", "myWin");
+    myWindow.document.write("This is 'myWin'");
+    myWindow.document.write("<br>ScreenLeft: " + myWindow.screenLeft);
+    myWindow.document.write("<br>ScreenTop: " + myWindow.screenTop);
+}
+					</code></pre>
+            <a href="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_screenleft">Ejemplo</a>
+          </section>
+          <section>
+            <h3>Propiedades : Deprecated / Obsoletos </h3>
+            <p>
+              <br />
+              <strong>window</strong>.<em>globalStorage</em> - Obsoleto en Gecko 13
+              <br />
+              - No soportado por <strong>(Firefox 13)</strong>. <br />
+              Usar <strong>window</strong>.<em>localStorage</em><br />
+              Antes existian multiples objetos almacenados que se usaban para almacenar datos a través de multiples paginas.
+              <br />
+              <br /><strong>window</strong>.<em>pkcs11</em> - Obsoleto Gecko 29 <br />
+              Proveía acceso a la instalación y borrado de los modulos PKC11 (<strong>Public Key Cryptography Standards</strong>)
+              <br />
+              <br /><strong>window</strong>.<em>status</em> - No lo soporta ni su madre <br />
+              Ajustaba el texto de la barra de estado a una ventana del navegador<br />
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>MÉTODOS</h2>
+          </section>
+          <section>
+            <h3>Alert</h3>
+            <p>Enseña un alert box con un mensaje dentro y un botón de OK.</p>
+            <pre>
+                    <code class="hljs" data-trim contenteditable>
+                      function myAlert() {
+                          alert("Soy un alert, encantado de conocerte");
+                      }
+					</code>
+            </pre>
+            <button onclick="myAlert()">Clicka en mí</button>
+            <br />
+            <br />
+            <h3>Confirm</h3>
+            <p>Enseña un dialog box con un mensaje y botones de OK y Cancelar.</p>
+            <pre>
+                    <code class="hljs" data-trim contenteditable>
+                      function myConfirm() {
+                          result = window.confirm("¿Quieres probar este dialogo?");
+                          if (result) {
+                              alert("Has aceptado");
+                          }
+                          else alert("Nooooooooooooooooooooooooooooo");
+                      }
+					</code>
+            </pre>
+            <button onclick="myConfirm()">Cicka en mi</button>
+          </section>
+
+          <section>
+            <h3>Prompt</h3>
+            <p>Muestra cuadro diálogo acompañados campo de texto para introducir datos.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+                      function myPrompt() {
+                          var mensaje = prompt("Introduce un número");
+                          alert(mensaje);
+                      }
+					</code></pre>
+            <button onclick="myPrompt()">Introduce un mensaje</button>
+          </section>
+          <section>
+            <h4>Atob y Btoa</h4>
+            <p>atob() decodifica un string codificado en base-64</p>
+            <p>y btoa() lo codifica</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    var str = "Hello World!";
+    var enc = window.btoa(str);
+    var dec = window.atob(enc);
+
+    var res = "Encoded String: " + enc + "<br>" + "Decoded String: " + dec;
+    document.getElementById("demo").innerHTML = res;
+}
+					</code></pre>
+            <button onclick="myCode()">Púlsame y verás un secreto</button>
+          </section>
+          <section>
+            <h4>Blur y Focus</h4>
+            <p>Blur quita el focus de la ventana actual y Focus asigna el focus a la ventana actual.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function windowBlurFocus(){
+  var focused = true;
+  window.onfocus = function() {
+    focused = true;
+    onFocus();
+  };
+  window.onblur = function() {
+    focused = false;
+    onBlur();
+  };
+}
+					</code></pre>
+            <a href="blur_focus.html">Ejemplo</a>
+          </section>
+          <section>
+            <h4>Open y Close</h4>
+            <p>open() abre nueva ventana en el navegador.</p>
+            <p>y close() la cierra.</p>
+            <pre>
+                      <code class="hljs" data-trim contenteditable>
+function openmyWindow() {
+	window.open("blur_focus.html");
+}
+
+function closeWindow() {
+	window.close();
+}
+					</code>
+            </pre>
+            <button onclick="openmyWindow(6)">Púlsame y verás un secreto</button>
+          </section>
+          <section>
+            <h4>Open</h4>
+            <p>Cosas que se pueden hacer con open()</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function openBlank() {
+	window.open();
+}
+function openGoogleinTab() {
+	window.open("http://www.google.es");
+}
+function openGoogleSelf() {
+	window.open("http://www.google.es", "_self");
+}
+function openGoogleinWindow() {
+	window.open("http://www.google.es", "_blank");
+}
+function openGoogleinWindow() {
+	window.open("http://www.google.es", "_blank", "width=200, height=100");
+}
+					</code></pre>
+            <button onclick="openmyWindow(1)">Abrir pestaña vacía</button>
+            <button onclick="openmyWindow(2)">Abrir pestaña google</button>
+            <button onclick="openmyWindow(3)">Abrir misma pestaña google</button>
+            <button onclick="openmyWindow(4)">¿Abrir en una ventana google?</button>
+            <button onclick="openmyWindow(5)">Ahora si en nueva ventana</button>
+
+          </section>
+          <section>
+            <h4>MatchmMedia</h4>
+            <p>Una sorpresa agradable, la forma más simple y rápida de usar @media queries en JavaScript</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var mql = window.matchMedia("screen and (max-width: 800px)")
+if (mql.matches){ // if media query matches
+ alert("La ventana es de 800 px o menos");
+}
+else alert("La ventana es de más de 800 px");
+					</code></pre>
+            <a href="matchmedia.html">Ejemplo</a>
+          </section>
+          <section> <!-- nueva diapositiva -->
+            <h3>moveBy()</h3>
+            <p>
+              Mueve la ventana una cantidad p&iacute;xeles relativa a su posici&oacute;n actual.
+            </p>
+            <h3>moveTo()</h3>
+            <p>
+              Mueve una ventana a las coordenadas espec&iacute;ficas.
+            </p>
+            <pre><code class="hljs" data-trim contenteditable>
+function moveToWindow() {
+    myWindow.moveTo(500, 100); 
+    myWindow.focus();
+}
+function moveByWindow() {
+    myWindow.moveBy(250, 250);
+    myWindow.focus();
+}
+					</code></pre>
+            <button onclick="openToMove()">Abrir nueva ventana</button>
+            <button onclick="moveWindow(3)">Shake it</button>
+            <button onclick="moveWindow(2)">Muevela de manera específica</button>
+            <button onclick="moveWindow(2)">Muevela de manera absoluta</button>
+          </section>
+          <section> <!-- nueva diapositiva -->
+            <h3>print()</h3>
+            <p>
+              Imprime el contenido de la ventana actual.<br />
+              Sintaxis : <strong>window</strong>.<em>print()</em><br />
+              Los valores de los parámetros: Ninguno<br />
+              Valores retorno : Ninguno
+            </p>
+            <h3>resizeBy()</h3>
+            <p>
+              Redimensiona ventana navegador a un tamaño específico <br />
+              indicando cantidad relativa respecto tamaño actual.<br />
+              Sintaxis : <strong>window</strong>.<em>resizeBy</em><strong>(width,height)</strong><br />
+              Nueva anchura : <strong>(anchura_anterior + x)</strong><br />
+              Nueva altura : <strong>(altura_anterior + y)</strong><br />
+              Valores parámetros:<br />
+              <strong>width</strong> - Número <strong>positivo / negativo</strong> especifica cantidad pixeles se redimensiona ancho pagina. <strong>(Requerido)</strong><br />
+              <strong>height</strong> - Número <strong>positivo / negativo</strong> especifica cantidad pixeles se redimensiona alto página <strong>(Requerido)</strong><br />
+            </p>
+          </section>
+
+          <section>
+            <h3>resizeTo()</h3>
+            <p>Redimensiona tamaño navegador mediante ancho <strong>"x"</strong> , alto <strong>"y"</strong> específico. 
+              <br /><strong>No permiten valores negativos.</strong><br />
+              Sintaxis: <strong>window</strong>.<em>resizeTo</em><strong>(width,height)</strong><br />
+              Valores parámetros:<br />
+              <strong>width:</strong> Número pixeles tiene ancho ventana <strong>(Requerido)</strong><br />
+              <strong>height:</strong> Número pixeles tiene alto ventana <strong>(Requerido)</strong><br />
+              Valor Retorno : Ninguno.<br />
+            </p>
+          </section>
+
+          <section>
+            <h3>scrollBy()</h3>
+            <p>
+              Desplazamiento scroll número específico píxeles.<br />
+              Sintaxis : <strong>window</strong>.<em>scrollBy</em><strong>(num_x , num_y)</strong><br />
+              Valores parámetros :<br />
+              num_x : Numero píxeles se desplaza en eje x (Requerido)<br />
+              num_y : Numero pixeles se desplaza en eje y (Requerido)<br />
+              Valor Retorno : Ninguno. <br />
+            </p>
+            <h3>scrollTo()</h3>
+            <p>
+              Desplazamiento del documento especificado mediante coordenadas <strong>"x"</strong> horizontal , <strong>"y"</strong> vertical.<br />
+              Sintaxis : <strong>window</strong>.<em>scrollTo</em><strong>(posicion_x , posicion_y)</strong><br />
+              Valores parametros:<br />
+              posición x : Coordenadas desplaza eje <strong>"x"</strong> . <strong>(Requerido)</strong><br />
+              posición y : Coordenadas desplaza eje <strong>"y"</strong> . <strong>(Requerido)</strong><br />
+              Valor Retorno : Ninguno.<br />
+            </p>
+          </section>
+
+          <section>
+            <h3>stop()</h3>
+            <p>Función que detiene la carga de la ventana.<br />
+              Es un método útil para cargar imagenes o frames que exceden demasiado tiempo.<br />  
+              Sintaxis : <strong>window</strong>.<em>stop()</em><br />
+              Valores parámetros : <em>Ninguno.</em><br />
+              Valor de retorno : <em>Ninguno.</em><br />
+            </p>
+          </section>
+          <section>
+            <h4>SetInterval y setTimeout</h4>
+            <pre><code class="hljs" data-trim contenteditable>
+						window.onload = function(){
+	setInterval(imagenes, 5000);
+}
+						</code></pre>
+            <pre><code class="hljs" data-trim contenteditable>
+						window.onload = function(){
+	setTimeout(imagenes, 5000);
+}
+						</code></pre>
+            <p><a href="Recuperacion/index-Copy.html">Ejemplo setTimeout</a></p>
+            <a href="Recuperacion/index.html">Ejemplo setInterval</a>
+          </section>
+          <section>
+            <h3>Funciones deprecated / obsoletas</h3>
+            <p>
+              <strong>window</strong>.<em>back()</em><br />
+              Movia hacia atras una vez en el historial de la ventana. API Obsoleta
+              <br /><strong>window</strong>.<em>captureEvents()</em><br />
+              Registraba la captura de todos los eventos de un tipo espeficiados en la ventana. 
+              <br /><strong>window</strong>.<em>disableExternalCapture()</em> - Obsoleto Gecko 24<br />
+              <strong>window</strong>.<em>forward()</em><br />
+              Movia el historial del documento una vez hacia adelante.
+              <br /><strong>window</strong>.<em>home()</em><br />
+              Regresaba el navegador a la pagina de inicio
+              <br /><strong>window</strong>.<em>releaseEvents()</em> <br />
+              Liberaba la ventana la captura de un evento especifico 
+              <br /><strong>window</strong>.<em>routeEvent()</em> - Obsoleto Gecko 24<br />
+              <strong>window</strong>.<em>scroll()</em>
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Y ahora... la sorpresa...</h3>
+            <pre><code class="hljs" data-trim contenteditable>
+	function gameLoop() {
+	  clearCanvas();
+	  moveEnemies();
+	  moveLaser();
+	  drawEnemies();
+	  drawShip();
+	  drawLaser();
+	  hitTest();
+	}
+
+	function init() {
+	  canvas = document.getElementById('canvas');
+	  ctx = canvas.getContext('2d');
+	  enemy = new Image();
+	  enemy.src = '8bit_enemy.png';
+	  ship = new Image();
+	  ship.src = 'ship.png';
+	  myInterval = setInterval(gameLoop, 25);
+	  document.addEventListener('keydown', keyDown, false);
+	  document.addEventListener('keyup', keyUp, false);
+	}
+						</code></pre>
+          </section>
+          <section>
+            <h3>SetInterval y ClearInterval</h3>
+            <pre><code class="hljs" data-trim contenteditable>
+	function pauseGame() {
+  if (!gamePaused) {
+    myInterval = clearInterval(myInterval);
+    gamePaused = true;
+  } else if (gamePaused) {
+    myInterval = setInterval(gameLoop, 25);
+    gamePaused = false;
+  }
+}
+						</code></pre>
+            <a href="ejemplo_timeout.html">Ejemplo</a>
+          </section>
+        </section>
+        <section>
+          <h3>
+            BIBLIOGRAFÍA
+          </h3>
+          <ul>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/API/Window">Mozilla Developer Network</a></li>
+            <li><a href="http://www.w3schools.com/">w3schools</a></li>
+            <li><a href="http://geneura.ugr.es/~victor/cursillos/javascript/js_window.html">Universidad de Granada</a></li>
+            <li><a href="http://librosweb.es">Libros web</a></li>
+            <li><a href="http://jaskokoyn.com/2013/08/21/window-object-advanced-javascript-tutorial">Window Object – Advanced JavaScript Tutorial</a></li>
+            <li><a href="http://librosweb.es">Libros web</a></li>
+          </ul>
+
+        </section>
+        <section style="text-align: left;">
+          <h1>Gracias por su atención</h1>
+          <!--<p>-->
+          <!--- <a href="http://slides.com">Try the online editor</a> <br>-->
+          <!--- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>-->
+          <!--</p>-->
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/metodos.js"></script>
+    <script>
+
+              // More info https://github.com/hakimel/reveal.js#configuration
+              Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                  {src: 'lib/js/classList.js', condition: function () {
+                      return !document.body.classList;
+                    }},
+                  {src: 'plugin/markdown/marked.js', condition: function () {
+                      return !!document.querySelector('[data-markdown]');
+                    }},
+                  {src: 'plugin/markdown/markdown.js', condition: function () {
+                      return !!document.querySelector('[data-markdown]');
+                    }},
+                  {src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                      hljs.initHighlightingOnLoad();
+                    }},
+                  {src: 'plugin/zoom-js/zoom.js', async: true},
+                  {src: 'plugin/notes/notes.js', async: true}
+                ]
+              });
+
+    </script>
+
+  </body>
+</html>

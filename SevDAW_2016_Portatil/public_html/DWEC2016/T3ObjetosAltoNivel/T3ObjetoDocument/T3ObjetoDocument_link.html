@@ -1,0 +1,44 @@
+<!--
+    @Created on : 08-oct-2016, 22:26:03
+    @Author     : RVS
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/1.png">
+    <script>
+
+      function myFunction() {
+        var x = document.links.length;
+        document.getElementById("demo").innerHTML = x;
+      }
+
+    </script>
+  </head>
+  <body>
+    <img src="img/1.png" width="50" height="50" alt="foto" usemap="#foto1">
+
+    <map name="foto1">
+      <area shape="rect" coords="0,0,82,126" href="img/1.png" alt="Sun">
+      <area shape="circle" coords="90,58,3" href="img/2.jpg" alt="Mercury">
+      <area shape="circle" coords="124,58,8" href="img/3.jpg" alt="Venus">
+    </map>
+
+    <p>
+      <a href="http://www.w3schools.com/html/default.asp">HTML</a>
+      <a href="http://www.w3schools.com/css/default.asp">CSS</a>
+    </p>
+
+    <p>Click the button to display the number of link in the document</p>
+
+    <button onclick="myFunction()">Boton</button>
+    <p id="demo"></p>
+
+  </body>
+</html>
+

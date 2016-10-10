@@ -1,0 +1,51 @@
+<!--
+    @Created on : 09-oct-2016, 12:20:32
+    @Author     : RVS
+    @Pag        : http://www.w3resource.com/javascript/client-object-property-method/window-closed.php
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Js Window Object : Closed Property. Example 1 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+//      closed : Determina si una ventana esta cerrada o no
+      function newWindow() {
+        win1 = window.open('', '', 'width=180,height=180');
+        win1.document.write("<p> We are learning closed property of window object </p>");
+      }
+      function closeWindow() {
+        win1.close();
+      }
+      function testWindow() {
+        if (self.closed) {
+//        if (win1.closed) {
+//          alert('Window is closed...');
+          win1.document.write("<br /> : ♦ Window is closed");
+        } else {
+//          alert('Window is open');
+          win1.document.write("<br /> : ♣ Window is Open");
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <form name="form1" action="#">
+      <br />
+      <br />
+      <input type="button" name="bt1" value="Open New Window" onclick="newWindow()" />
+      <br />
+      <br />
+      <input type="button" name="bt2" value="Close New Window" onclick="closeWindow()" />
+      <br />
+      <br />
+      <input type="button" name="bt3" value="Test : Window is open or not ?" onclick="testWindow()" />
+      <br />
+      <br />
+    </form>
+  </body>
+</html>

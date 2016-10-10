@@ -1,0 +1,32 @@
+<!--
+    @Created on : 08-oct-2016, 12:26:23
+    @Author     : RVS
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      function myFunction() {
+        if (window.top !== window.self) {
+          document.getElementById("demo").innerHTML = "♦ This window is NOT the topmost window : Am I in a frame?";
+        } else {
+          document.getElementById("demo").innerHTML = "♠ This window is the topmost window : topmost window equals the current window";
+        }
+      }
+    </script>
+  </head>
+  <body>
+
+    <button onclick="myFunction()">Check Window</button>
+
+    <p id="demo"></p>
+
+  </body>
+</html>
