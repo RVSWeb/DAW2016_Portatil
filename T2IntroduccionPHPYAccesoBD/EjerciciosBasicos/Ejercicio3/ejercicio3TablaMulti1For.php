@@ -9,7 +9,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/micss.css">
-    <title>Tabla</title>
+    <title>Tabla 1 </title>
   </head>
   <body>
     <?php
