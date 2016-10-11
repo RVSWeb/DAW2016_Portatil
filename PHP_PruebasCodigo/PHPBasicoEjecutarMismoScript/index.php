@@ -19,7 +19,7 @@ and open the template in the editor.
     ?>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-      <input type="text" name="name"><br>
+      <input type="text" name="name"><br />
       <input type="submit" name="submit" value="Submit Form"><br>
     </form>
   </body>
