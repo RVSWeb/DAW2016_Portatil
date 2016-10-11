@@ -8,12 +8,25 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Enviar</title>
   </head>
   <body>
     <?php
-    
-    
+    if (isset($_REQUEST['enviar']) && $_REQUEST['numero'] != '') {
+      if ($_REQUEST['numero'] >= 0) {
+        echo " Tabla Multiplicar :  ";
+        echo $nn = 0;
+        for ($numero = 0; $numero < 11; $numero++) {
+          echo $nn++ . " x ";
+          echo $_REQUEST['numero'] . " = ";
+          echo $_REQUEST['numero'] * $numero . " | ";
+          echo "<br>";
+        }
+      }
+    }
+    if (isset($_REQUEST['enviar']) == true) {
+      echo '<a href="./PHPEjercicio02.php" title="Volver a la pagina anterior"> </a>';
+    }
     ?>
   </body>
 </html>
