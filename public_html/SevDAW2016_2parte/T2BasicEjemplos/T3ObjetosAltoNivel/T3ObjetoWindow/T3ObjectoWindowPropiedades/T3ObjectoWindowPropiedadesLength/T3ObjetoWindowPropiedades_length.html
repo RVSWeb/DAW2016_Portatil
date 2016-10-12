@@ -1,0 +1,41 @@
+<!--
+    @Created on : 12-oct-2016, 20:00:37
+    @Author     : RVS - N.F.N.D
+    @Pag        : http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_length
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+  </head>
+  <body>
+    <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+    <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+    <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+    <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+    <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+    <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+    <p>Click button to get the number of frames found on this page</p>
+
+    <button onclick="myFunction()">Boton</button>
+
+    <div>
+      <p id="valor"></p>
+      <p id="demo"></p>
+    </div>
+
+    <script>
+      function myFunction() {
+        var x = "longitud del array : " + window.length;
+        var x1 = "!!!!!! Valor !!!!!!";
+        document.getElementById("demo").innerHTML = x;
+        document.getElementById("valor").innerHTML = x1;
+      }
+    </script>
+
+  </body>
+</html>
