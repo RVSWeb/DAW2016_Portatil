@@ -1,0 +1,60 @@
+<!--
+    @Created on : 12-oct-2016, 18:04:57
+    @Author     : RVS - N.F.N.D
+    @Pag        : http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_host
+    @Doc        : reload() realiza la recarga de la pagina : desde la cache
+                  se puede forzar a cargar la pagina desde el servidor ajustando el
+                  parametro forceGet a true
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      /**
+       * 
+       * @returns {undefined}
+       */
+      function recarga_cache() {
+        window.location.reload();
+      }
+
+
+      /**
+       * 
+       * @returns {undefined}
+       */
+      function recarga_servidor() {
+        window.location.reload(true);
+      }
+
+      function recorrer() {
+        var frames = window.frames;
+        for (var i = 0; i < frames.length; i++) {
+          frames[i].location = "http://imagenesfotos.com/wp-content/2009/07/tn_abstract-132.jpg";
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <iframe height="130" width="160" src="https://duckduckgo.com"></iframe>
+      <iframe height="130" width="160" src="http://google.es"></iframe>
+      <iframe height="130" width="160" src="http://developers.google.com"></iframe>
+      <iframe height="130" width="160" src="http://www.w3schools.com"></iframe>
+      <br />
+      <br />
+      <button onclick="recorrer()">Recorre</button>
+      <br />
+      <br />
+      <button onclick="recarga_cache()">Recarga cache</button>
+      <button onclick="recarga_servidor()">Recarga servidor</button>
+    </div>
+  </body>
+</html>

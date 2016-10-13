@@ -16,17 +16,17 @@
 
     <p>Click button to get the number of frames found on this page</p>
 
-
     <iframe height="130" width="160" src="https://duckduckgo.com"></iframe>
     <iframe height="130" width="160" src="https://google.es"></iframe>
     <iframe height="130" width="160" src="http://www.mclibre.org"></iframe>
     <iframe height="130" width="160" src="http://www.w3schools.com"></iframe>
-       <button onclick="myFunction()">Boton</button>
-   
+    <br />
+    <br />
+    <button onclick="myFunction()">Boton</button>
+
     <script>
       function myFunction() {
         var frames = window.frames;
-
         for (var i = 0; i < frames.length; i++) {
           frames[i].location = "http://imagenesfotos.com/wp-content/2009/07/tn_abstract-132.jpg";
         }
