@@ -1,0 +1,57 @@
+<!--
+    @Created on : 12-oct-2016, 10:48:00
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      /**
+       * Obtiene los elementos del body de la pagina web
+       * @returns {undefined}
+       */
+      function inicializar() {
+        document.getElementById("crear-ventana").onclick = crearNueva;
+        document.getElementById("cerrar-ventana").onclick = cerrarNueva;
+      }
+
+      /**
+       * Abre una nueva direccion
+       * @type Window
+       */
+      var nuevaVentana;
+      function crearNueva() {
+        nuevaVentana = window.open("", "_blank", "height=200 , width=200");
+      }
+
+      /**
+       * Cierra ventana 
+       * @returns {undefined}
+       */
+      function cerrarNueva() {
+        if (nuevaVentana) {
+          nuevaVentana.close();
+          nuevaVentana = null;
+        }
+      }
+
+    </script>
+  </head>
+  <body onload="inicializar()">
+    <div>
+      <h1>Abrimos y Cerramos Ventanas</h1>
+      <form>
+        <p><input type="button" id="crear-ventana" value="Crear Nueva Ventana">
+          <input type="button" id="cerrar-ventana" value="Cerrar Ventana">
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!--
+    @Created on : 12-oct-2016, 23:45:12
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+      function get_dimensiones() {
+        var iw = window.innerWidth;
+        var ih = window.innerHeight;
+        document.getElementById("demo").innerHTML = "Width : " + iw + "<br /> Height : " + ih;
+      }
+
+      function set_reload() {
+        location.reload();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>(NOT including toolbar and scrollbars)</h1>
+    <p>Click the button to display this window height and width</p>
+    <p id="demo"><strong>Note:</strong> The innerWidth and innerHeight properties are not supported in IE8 and earlier.</p>
+    <button onclick="get_dimensiones()">Dimension</button>
+    <br />
+    <br />
+    <button onclick="set_reload()">Recarga</button>
+
+
+
+  </body>
+</html>

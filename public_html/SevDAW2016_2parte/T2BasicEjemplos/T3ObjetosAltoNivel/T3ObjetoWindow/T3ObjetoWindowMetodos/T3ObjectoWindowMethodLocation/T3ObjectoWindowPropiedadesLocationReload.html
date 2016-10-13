@@ -1,0 +1,43 @@
+<!--
+    @Created on : 12-oct-2016, 18:04:57
+    @Author     : RVS - N.F.N.D
+    @Pag        : http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_host
+    @Doc        : reload() realiza la recarga de la pagina : desde la cache
+                  se puede forzar a cargar la pagina desde el servidor ajustando el
+                  parametro forceGet a true
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      function pagina() {
+        var x = "longitud del array : " + window.length;
+        document.getElementById("demo").innerHTML = x;
+      }
+
+      function myFunction() {
+        location.reload();
+      }
+      
+    </script>
+  </head>
+  <body>
+    <div>
+
+      <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+      <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+      <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+      <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+      <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+      <iframe height="30" width="30" src="https://duckduckgo.com"></iframe>
+
+      <button onclick="myFunction()">Cargar</button>
+    </div>
+  </body>
+</html>

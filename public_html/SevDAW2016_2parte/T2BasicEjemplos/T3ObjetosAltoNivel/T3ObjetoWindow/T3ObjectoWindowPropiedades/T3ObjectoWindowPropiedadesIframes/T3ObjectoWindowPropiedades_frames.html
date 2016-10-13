@@ -1,0 +1,32 @@
+<!--
+    @Created on : 11-oct-2016, 20:39:17
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+    @Comment    : Cada ventana o pestaña del navegador es un objeto window
+-->
+<!DOCTYPE html>
+<head>  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+  <title>We are learning JavaScript</title>  
+  <link rel="shortcut icon" href="">
+  <script>
+    function myFunction() {
+      window.frames[0].location = "https://www.tutorialspoint.com/web_development_tutorials.htm";
+    }
+  </script>
+</head>  
+<body>
+  <section>
+    <p>
+      Click the button to find change the location of the first
+      iframe element ( index 0 ) 
+    </p>
+    <iframe src = "http://www.w3schools.com"> </iframe> <!-- modifica este enlace -->
+    <iframe src = "http://www.w3schools.com"> </iframe>
+    <br />
+    <button onclick="myFunction()">B</button>
+  </section>
+
+</body>  
+</html>  
