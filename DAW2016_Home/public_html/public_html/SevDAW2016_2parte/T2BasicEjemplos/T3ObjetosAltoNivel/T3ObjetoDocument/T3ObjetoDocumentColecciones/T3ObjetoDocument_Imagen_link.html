@@ -1,0 +1,43 @@
+<!--
+    @Created on : 14-oct-2016, 17:06:21
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">   
+    <script>
+      function num_fotos() {
+        var x = document.images.length;
+        document.getElementById("demo").innerHTML = x;
+      }
+
+      function elegir_foto() {
+        var xx = document.images[1].innerHTML;
+        document.getElementById("demo1").innerHTML = xx;
+      }
+    </script>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <a title="" href="http://www.google.es"><img src="img/1.bmp" alt="1" height="40" width="50"></a>
+    <a title="" href=""><img src="img/1.bmp" alt="1" height="40" width="50"></a>
+    <img src="img/3.jpg" alt="3" height="40" width="50">
+    <img src="img/4.png" alt="4" height="40" width="50">
+    <p id="demo1"></p>
+    <button onclick="num_fotos()">N</button>
+    <br />
+    <br />
+    <button onclick="elegir_foto()">E</button>
+    <br />
+  </body>
+</html>
+
+
+
+
