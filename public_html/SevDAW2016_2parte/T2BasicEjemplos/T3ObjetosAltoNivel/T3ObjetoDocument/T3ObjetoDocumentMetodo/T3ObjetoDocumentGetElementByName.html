@@ -1,0 +1,75 @@
+<!--
+    @Created on : 14-oct-2016, 21:36:33
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+  </head>
+  <body>
+    <div>
+      First name:
+      <br />
+      <input name="fname" type="text" value="Michael">
+      <br />
+      First name:
+      <br />
+      <input name="fname" type="text" value="Doug">
+      <br />
+      Boton
+      <br />
+      <button onclick="otrafuncion()" name="fname1">O</button>
+      <br />
+      Boton
+      <br />
+      <button onclick="otrafuncion1()" name="fname1">O1</button>
+      <br />
+
+      <p>Click the button to get the tag name of the first element
+        in the document that has a name attribute with the value 'fname'</p>
+
+      <button onclick="myFunction()">Try it</button>
+      <button onclick="myFunction()">Try it1</button>
+
+      <p id="demo"></p>
+      <br />
+      <p id="demo1"></p>
+
+      <script>
+        function myFunction() {
+          var x = document.getElementsByName("fname")[0].tagName;
+          document.getElementById("demo").innerHTML = x;
+        }
+
+        function myFunction() {
+          var x = document.getElementsByName("fname")[1].tagName;
+          document.getElementById("demo1").innerHTML = x;
+        }
+
+        function otrafuncion() {
+          var xx = document.getElementsByName("fname1")[0].tagName;
+          document.getElementById("demo").innerHTML = xx;
+        }
+
+        function otrafuncion1() {
+          var xx1 = document.getElementsByName("fname1")[0].tagName;
+          document.getElementById("demo1").innerHTML = xx1;
+        }
+
+      </script>
+
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
