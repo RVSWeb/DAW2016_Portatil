@@ -1,0 +1,61 @@
+<!--
+    @Created on : 12-oct-2016, 11:05:25
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+//      variable global
+      var myWindow;
+
+      function openWin() {
+        myWindow = window.open("", "_blank", "width=200 , height=200");
+      }
+
+      function closeWin() {
+        if (myWindow) {
+          myWindow.close();
+        }
+      }
+
+      function checkWin() {
+        if (!myWindow) {
+          document.getElementById("msg").innerHTML = "'myWindow' has never been opened!";
+        } else {
+          document.getElementById("msg").innerHTML = "'myWindow' has not been closed!";
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>Optional. Specifies the target attribute or the name of the window. The following values are supported:</p>
+      <p>_blank - URL is loaded into a new window. This is default</p>
+      <p>_parent - URL is loaded into the parent frame</p>
+      <p>_self - URL replaces the current page</p>
+      <p>_top - URL replaces any framesets that may be loaded</p>
+      <p>name - The name of the window (Note: the name does not specify the title of the new window)</p>
+      <br />
+      <br />
+      <button onclick="openWin()">Open myWindow</button>
+      <br />
+      <br />
+      <button onclick="closeWin()">Close myWindow</button>
+      <br />
+      <br />
+      <button onclick="checkWin()">Has "myWindow" been closed?</button>
+      <br />
+      <br />
+    </div>
+    <p id="msg">Mensaje</p>
+  </body>
+</html>

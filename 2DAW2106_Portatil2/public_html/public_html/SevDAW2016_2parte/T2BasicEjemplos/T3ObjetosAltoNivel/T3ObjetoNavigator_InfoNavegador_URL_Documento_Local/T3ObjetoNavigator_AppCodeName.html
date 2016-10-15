@@ -1,0 +1,38 @@
+<!--
+    @Created on : 14-oct-2016, 16:52:12
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      function codigoNavegador() {
+        var x0 = window.navigator.appCodeName;
+        document.write("<br /> appCodeName : " + x0);
+        var x1 = window.navigator.appName;
+        document.write("<br /> appName : " + x1);
+        var x2 = window.navigator.appVersion;
+        document.write("<br /> appVersion : " + x2);
+        var x3 = window.navigator.cookieEnabled;
+        document.write("<br /> cookieEnabled : " + x3);
+        var x4 = window.navigator.platform;
+        document.write("<br /> platform : " + x4);
+        var x5 = window.navigator.userAgent;
+        document.write("<br /> userAgent : " + x5);
+      }
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <button onclick="codigoNavegador()">C</button>
+    </div>
+  </body>
+</html>

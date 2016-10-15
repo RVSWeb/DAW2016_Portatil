@@ -1,0 +1,28 @@
+<!--
+    @Created on : 11-oct-2016, 20:39:17
+    @Author     : RVS - N.F.N.D
+    @Pag        : http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_frameelement
+    @version    :
+    @Comment    : Cada ventana o pestaña del navegador es un objeto window
+-->
+<!DOCTYPE html>
+<html>
+  <head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <title>We are learning JavaScript</title>  
+    <link rel="shortcut icon" href="">
+    <script>
+      function myFunction() {
+        var frame = window.frameElement;
+        if (frame) {
+          frame.src = "https://www.tutorialspoint.com/web_development_tutorials.htm";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>Click the button to find out if the window on the right side (the result side) is in an iframe. If so, change its URL to "w3schools.com".</p>
+    <button onclick="myFunction()">Try it</button>
+
+  </body>
+</html>

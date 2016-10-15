@@ -1,0 +1,60 @@
+<!--
+    @Created on : 11-oct-2016, 20:39:17
+    @Author     : RVS - N.F.N.D
+    @Pag        : http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_frameelement
+    @version    :
+    @Comment    : Cada ventana o pestaña del navegador es un objeto window
+-->
+<!DOCTYPE html>
+<html>
+  <head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <title>We are learning JavaScript</title>  
+    <link rel="shortcut icon" href="">
+    <script>
+
+      function numero_frame() {
+        var x = window.frames.length;
+        for (var i = 0; i < x; i++) {
+          document.write("<br /> : " + i);
+        }
+      }
+
+      function historial() {
+        var x = window.history.back();
+        document.write(x);
+      }
+
+      function name() {
+        var z = window.name.toString();
+        document.write(z);
+        alert(z);
+      }
+
+      function navigator() {
+        var xx = window.navigator;
+        alert(xx);
+      }
+
+      function padre() {
+        var xzx = window.parent.name;
+        document.write(xzx);
+        alert(xzx);
+      }
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <iframe src="http://www.w3schools.com" height="130"></iframe>
+      <iframe src="http://localhost/dashboard/" height="130"></iframe>
+      <iframe src="https://www.tutorialspoint.com/web_development_tutorials.htm" height="130"></iframe>
+      <iframe src="http://www.spanishdict.com/" height="130"></iframe>
+      <br />
+      <button onclick="numero_frame()">B</button>
+      <button onclick="historial()">H</button>
+      <button onclick="navigator()">N</button>
+      <button onclick="padre()">P</button>
+    </div>
+  </body>
+</html>

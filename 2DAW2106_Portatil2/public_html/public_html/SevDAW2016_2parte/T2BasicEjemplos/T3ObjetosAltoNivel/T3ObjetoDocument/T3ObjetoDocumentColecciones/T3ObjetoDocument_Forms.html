@@ -1,0 +1,58 @@
+<!--
+    @Created on : 14-oct-2016, 17:06:21
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+  </head>
+  <body>
+    <button onclick="formulario()">F</button>
+    <p id="demo">Valor</p>
+    <form action="" method="get">
+      <label>Nombre : </label>
+      <input type="text" value="" name="name" />
+      <br />
+      <label>Numero : </label>
+      <input type="number" value="" name="numero" />
+      <br />
+      <label>Casado : </label>
+      <input type="radio" value="" name="casado" />
+      <br />
+      <br />
+      <input type="submit" value="Enviar" />
+      <br />
+      <br />
+    </form>
+    <form action="" method="get">
+      <label>Nombre : </label>
+      <input type="text" value="" name="name" />
+      <br />
+      <label>Numero : </label>
+      <input type="number" value="" name="numero" />
+      <br />
+      <label>Casado : </label>
+      <input type="radio" value="" name="casado" />
+      <br />
+      <br />
+      <input type="submit" value="Enviar" />
+      <br />
+      <br />
+    </form>
+    <script>
+      function formulario() {
+        var x = document.forms.length;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
