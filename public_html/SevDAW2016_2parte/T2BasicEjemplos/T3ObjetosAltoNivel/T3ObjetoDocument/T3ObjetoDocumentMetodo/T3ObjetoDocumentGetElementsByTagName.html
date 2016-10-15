@@ -1,0 +1,47 @@
+<!--
+    @Created on : 14-oct-2016, 21:36:33
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+      function mifuncion() {
+        var x = document.getElementsByTagName("li");
+        document.getElementById("demo").innerHTML = x[0].innerHTML;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>An unordered list: </p>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+
+      <p>
+        Click the button to display the innerHTML of the
+        second 'li' element (index 1) 
+      </p>
+
+      <p id="demo">Cambio de valor</p>
+
+      <button onclick="mifuncion()">T</button>
+
+    </div>
+  </body>
+</html>
+
+
+
+
+
+

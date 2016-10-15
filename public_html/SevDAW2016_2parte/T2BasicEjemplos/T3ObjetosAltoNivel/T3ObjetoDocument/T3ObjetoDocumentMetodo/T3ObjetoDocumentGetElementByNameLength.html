@@ -1,0 +1,52 @@
+<!--
+    @Created on : 14-oct-2016, 21:36:33
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+      function mifuncion() {
+        var x = document.getElementsByName("animal");
+        document.getElementById("demo").innerHTML = x;
+      }
+      
+      function mifuncion1() {
+        var x = document.getElementsByName("animal").length;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <br />
+      Cats:
+      <input name="animal" type="checkbox" value="Cats">
+      <br />
+      Dogs:
+      <input name="animal" type="checkbox" value="Dogs">
+      <br />
+      <p>
+        Click the button to find out how many elements there are in the
+        document that have a name attribute with the value 'animal' 
+      </p>
+
+      <button onclick="mifuncion1()">Try it</button>
+
+      <p id="demo"></p>
+
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
